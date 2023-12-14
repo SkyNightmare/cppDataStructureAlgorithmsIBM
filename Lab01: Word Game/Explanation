@@ -1,0 +1,54 @@
+The game was such that the students need to find a word in which every letter repeats only once. 
+
+Note:
+
+The number of characters in the string should be an even number. If fails, print as <<string>> is a incorrect input and terminate the application.
+Input is case sensitive. 
+
+Sample Input 1:
+
+Enter the string:
+
+momo
+
+Sample Output 1:
+
+momo is a valid string
+
+
+
+Sample Input 2:
+
+Enter the string:
+
+poem
+
+Sample Output 2:
+
+poem is not a valid string
+
+
+
+
+Sample Input 3:
+
+Enter the string:
+
+shell
+
+Sample Output 3:
+
+shell is a incorrect input
+
+| Line Number | Code Snippet                                   | Explanation                                                                                                                                                                     |
+|-------------|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1-5         | `#include<iostream>` and `#include<string>`     | Preprocessor directives including necessary libraries for input/output and string manipulation.                                                                               |
+| 6           | `using namespace std;`                          | Declaration to use the standard C++ namespace, allowing the use of standard C++ functions and objects without prefixing them with `std::`.                                      |
+| 8-10        | `int main()`                                   | The main function, the entry point of the program. It returns an integer indicating the status of the program to the operating system.                                           |
+| 12          | `string text;`                                 | Declaration of a string variable named `text` to store the user input.                                                                                                         |
+| 13          | `bool isValid = true;`                         | Declaration of a boolean variable named `isValid` initialized to `true`. Its function is to track the validity of the input string.                                              |
+| 16-19       | `cout << "Enter the string:" << endl;`        | Output to the console, prompting the user to enter a string.                                                                                                                     |
+| 20          | `cin >> text;`                                | Input from the user, reading the string and storing it in the `text` variable.                                                                                                   |
+| 22-28       | `if ((text.size() % 2) == 0)`                 | Conditional check: ensures the length of the string is even.                                                                                                                     |
+| 30-47       | Nested loops to check for repeated characters  |   - Outer Loop (`for (int i = 0; i < text.size(); i++)`): Iterates over each character in the string. Inner Loop (`for (int j = 0; j < text.size(); j++)`): Compares the current character with every other character in the string.`if (text[i] == text[j])`: Checks if the characters at positions `i` and `j` are the same.`count++`: Increments the counter if a match is found.`if (count != 2)`: Checks if the count is not equal to 2, indicating more or fewer than two occurrences of the character.`isValid = false;`: Sets `isValid` to false if the count condition is met.`break;`: Exits the loop. |
+| 49-60       | Output based on the validity of the string      |   - `if (isValid)`: Prints that the string is valid if `isValid` is true.`else`: Prints that the string is not valid if `isValid` is false.Final `else` block handles the case where the length of the string is not even, indicating an incorrect input.`return 0;`: Indicates successful completion of the program to the operating system. |
