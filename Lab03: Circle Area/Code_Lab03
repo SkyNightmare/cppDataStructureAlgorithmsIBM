@@ -1,1 +1,47 @@
+#include<iostream>
+using namespace std;
 
+class Circle
+{
+private:
+    int radius;
+
+public:
+    Circle(int r) : radius(r) {}
+
+    int getRadius() const
+    {
+        return radius;
+    }
+
+    void setRadius(int r)
+    {
+        radius = r;
+    }
+};
+
+class Utility
+{
+public:
+    double calculateArea(const Circle &c)
+    {
+        return 3.14 * c.getRadius() * c.getRadius();
+    }
+};
+
+int main()
+{
+    int radius = 0;
+    cout << "Enter the radius(in cm)" << endl;
+    cin >> radius;
+
+    Circle circle(radius);
+
+    Utility utility;
+
+    double area = utility.calculateArea(circle);
+
+    cout << "Circle Area=" << area << "cm2" << endl;
+
+    return 0;
+}
