@@ -1,1 +1,59 @@
+Vicky works on a poultry farm. Every day he packs egg cartons for the local market. The ideal weight of an egg is 50 -70 gms. The eggs weighing above 70 gms are considered non-ideal weighed eggs. The eggs below 50 gms are faulty eggs and there can be a maximum of only 4 faulty eggs in a carton. If the carton has more than four faulty eggs, print â€œThe box contains more than four faulty eggsâ€ and terminate the program. Develop a program for the same using C++ concepts.
 
+Note: Avoid the usage of exit(0) in the program. 
+
+Sample Input/Output 1:
+
+Enter the number of Eggs
+
+6
+
+Enter the weight of the eggs(in grams)
+
+10.1
+
+20.1
+
+30.2
+
+40.4
+
+49.5
+
+The box contains more than four faulty eggs
+
+ 
+
+Sample Input/Output 2:
+
+Enter the number of Eggs
+
+4
+
+Enter the weight of the eggs(in grams)
+
+56.1
+
+79
+
+23.1
+
+67.7
+
+Count of eggs with ideal weight=2
+
+Count of eggs with non-ideal weight=1
+
+Count of eggs with faulty weight=1
+
+
+Loop through Eggs:
+Iterates through each egg using a for loop.
+Reads the weight of each egg from the user.
+Checks conditions:
+If the weight is greater than 70, increments nonIdeal.
+If the weight is less than 50, increments faulty. If more than 4 faulty eggs are found, breaks out of the loop.
+Otherwise, increments ideal.
+Checks if the count of faulty eggs is greater than 4.
+If true, outputs a message about more than four faulty eggs.
+If there are not more than four faulty eggs, outputs counts of eggs with ideal, non-ideal, and faulty weights.
