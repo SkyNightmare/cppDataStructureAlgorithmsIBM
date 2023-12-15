@@ -1,0 +1,32 @@
++------+-----------------------------------------------+----------------------------------------------------------+
+| Step | Code                                          | Explanation                                               |
++------+-----------------------------------------------+----------------------------------------------------------+
+| 1    | #include<iostream>                             | Include the necessary input-output stream library.        |
+| 2    | using namespace std;                           | Use the standard namespace for cout, cin, etc.             |
+| 3    | class Circle                                   | Start the definition of the Circle class.                  |
+| 4    | {                                             | Begin the class body.                                      |
+| 5    | private:                                      | Declare private section for class members.                 |
+| 6    |     int radius;                                | Declare a private integer member variable 'radius'.        |
+| 7    | public:                                       | Declare public section for class methods.                  |
+| 8    |     Circle(int r) : radius(r) {}              | Constructor: Initializes the radius using an argument 'r'. |
+| 9    |     int getRadius() const { return radius; }  | Getter method for the radius.                              |
+| 10   |     void setRadius(int r) { radius = r; }      | Setter method for the radius.                              |
+| 11   | };                                            | End of the Circle class definition.                         |
+| 12   | class Utility                                 | Start the definition of the Utility class.                 |
+| 13   | {                                             | Begin the class body.                                      |
+| 14   | public:                                       | Declare public section for class methods.                  |
+| 15   |     double calculateArea(const Circle &c) {   | Method to calculate the area of a circle.                 |
+| 16   |         return 3.14 * c.getRadius() * c.getRadius(); } |                                                   |
+| 17   | };                                            | End of the Utility class definition.                       |
+| 18   | int main()                                    | Start the main function.                                   |
+| 19   | {                                             | Begin the main function body.                              |
+| 20   |     int radius = 0;                           | Declare and initialize an integer variable 'radius' to 0. |
+| 21   |     cout << "Enter the radius(in cm)" << endl; | Display a prompt to enter the radius.                     |
+| 22   |     cin >> radius;                            | Take user input for the radius.                           |
+| 23   |     Circle circle(radius);                   | Create a Circle object 'circle' with the entered radius.   |
+| 24   |     Utility utility;                         | Create an object of the Utility class.                     |
+| 25   |     double area = utility.calculateArea(circle); | Calculate the area using the Utility class method.     |
+| 26   |     cout << "Circle Area=" << area << "cm2" << endl; | Display the calculated area.                        |
+| 27   |     return 0;                                 | Indicate successful program execution.                     |
+| 28   | }                                             | End of the main function body.                             |
++------+-----------------------------------------------+----------------------------------------------------------+
