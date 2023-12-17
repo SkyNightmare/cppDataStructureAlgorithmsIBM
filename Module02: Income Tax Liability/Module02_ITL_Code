@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() { // DO NOT change the 'main()' signature
+
+    // Write your code here
+    int s, i = 0;
+    int taxable = 0, nonTaxable = 0;
+
+    cout << "Enter the no. of income sources:" << endl;
+    cin >> s;
+
+    float income[s];
+
+    cout << "Enter the income from various sources: " << endl;
+    for (i = 0; i < s; i++) {
+        cin >> income[i];
+
+        if (income[i] > 9950) {
+            taxable++;
+        } else {
+            nonTaxable++;
+        }
+    }
+
+    cout << "No. of taxable income(s): " << taxable << endl;
+
+    if (nonTaxable == s) {
+        cout << "Not liable to pay income tax." << endl;
+    }
+
+    return 0;
+}
