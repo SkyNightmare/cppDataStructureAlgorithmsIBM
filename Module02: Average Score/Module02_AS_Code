@@ -1,0 +1,50 @@
+////PLEASE DO NOT CHANGE THE GIVEN CODE TEMPLATE. WRITE YOUR CODE IN THE PROVIDED PLACES ALONE.
+
+#include <iostream>
+using namespace std;
+
+
+int main(){   //DO NOT change the 'main()' signature
+    
+    //Write your code here
+     int n, i = 0;
+    cout << "Enter no. of assignments:";
+    cin>> n; //8
+    if(n >10){
+        cout << "No. of assignments must not be more than 10";
+        return 0;
+    }
+    else {
+    float scores[i];
+    cout <<"Enter the scores:" <<endl;
+    
+    
+    for (i=0; i<n; i++){
+        cin >> scores[i];
+        //23
+        //89
+        //89
+        //96
+        //81
+        //78
+        //88
+        //97
+    }
+    
+    float sum = 0;
+    for (i = 0; i < n; i++) {
+        sum += scores[i];
+    }
+
+    float average = sum / n;
+    cout << "The average score is " << average << endl; //80.12
+    if(average>=80){
+        cout << "Eligible for projects";
+    }
+    else {
+        cout << "Not eligible for projects";
+    }
+    return 0;
+
+}
+}
