@@ -1,0 +1,63 @@
+Given a singly linked list and an integer x, your task is to complete the function deleteAllOccurrences() which deletes all occurrences of a key x present in the linked list. The function takes one argument: an integer key x and the function need not return anything.
+
+Note:
+Define the 'Node' class with the below-mentioned public attributes:
+         An integer attribute with the name: 'data'
+         A reference to the next node with the name: 'next';
+
+Please include the statement '#include <cstdlib>' to deallocate/free the memory using 'free()' method.  Otherwise, use the 'delete' operator instead of 'free()' to deallocate/free the memory. 
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+
+Input:
+The first line of input contains an integer N denoting the no. of elements of the linked list.
+The next line is N values of the linked list.
+The third line of the input is the value (integer x) to be deleted.
+
+Output:
+The elements in the list after deleting all the occurrence of the given value.
+
+
+Sample input statement:
+5
+2 2 1 4 4
+
+Enter the element to be deleted: 4
+
+Sample output statement:
+The list after deletion: 2 2 1
+
+Explanation:
+
+1.Node Class:
+Node represents an element in a linked list.
+It has two members: data (to store the value of the node) and next (a pointer to the next node in the list).
+
+2.LinkedList Class:
+LinkedList represents a linked list.
+It has a member head which points to the first node in the list.
+The constructor initializes the head to NULL indicating an empty list.
+
+3.append Method:
+Adds a new node with a given value to the end of the list.
+If the list is empty (head is NULL), the new node becomes the head.
+If the list is not empty, it traverses the list to find the last node and appends the new node there.
+
+4.deleteAllOccurrences Method:
+Deletes all occurrences of a given value from the list.
+It uses two pointers, current and previous, to traverse the list.
+It checks if the first node (head) contains the value to be deleted and adjusts the head accordingly.
+For subsequent nodes, it adjusts the next pointers of the previous node to skip the node with the value to be deleted.
+It then displays the updated list.
+
+5.display Method:
+Displays the elements in the list after deletion.
+It traverses the list, printing the data of each node.
+
+6.main Function:
+Asks the user to input the size of the list (N).
+Creates an instance of LinkedList called lst.
+Accepts N values from the user and appends them to the list using the append method.
+Asks the user for the element to be deleted (delValue).
+Calls the deleteAllOccurrences method to delete all occurrences of delValue and displays the updated list.
