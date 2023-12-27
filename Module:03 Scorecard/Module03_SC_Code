@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int race[100];
+    int i = 0;
+    int counter = 1;
+
+    cout << "Enter the no. of hurdles: ";
+    int numberOfHurdles;
+    cin >> numberOfHurdles;
+    
+    if(numberOfHurdles <= 0 || numberOfHurdles >100) {
+        cout<< "Invalid no. of hurdles";
+    }
+    else {
+    // store the number of hurdles in the race array
+    for (i = 0; i < numberOfHurdles; i++) {
+        cout << "Enter the hurdle height " << counter << ": ";
+        counter++;
+        cin >> race[i];
+    }
+
+    // Display the last 5 stored values
+    int startIdx = max(0, numberOfHurdles - 5);
+    cout << "The last 5 hurdles entered are: ";
+    for (i = startIdx; i < numberOfHurdles; i++) {
+        cout << race[i] << " ";
+    }
+}
+    return 0;
+}
