@@ -1,0 +1,78 @@
+Design a stack using arrays that will support the following operations:
+1. push() which adds an element to the top of the stack.
+2. findMiddle() which will return the middle element of the stack.
+3. pop() which removes an element from the top of the stack.
+
+
+The maximum size of the stack should be 50.  If the number of elements to be pushed into the stack is 0 or negative, the code should display "Invalid input".
+
+Note:
+
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+
+
+Sample input statement 1:
+Enter the number of elements to be pushed into the stack:
+5
+Enter element 1:
+10
+Enter element 2:
+8
+Enter element 3:
+25
+Enter element 4:
+8
+Enter element 5:
+3
+ 
+Sample output statement 1:
+The middle element is: 25
+The popped element is: 3
+
+
+
+Sample input statement 2:
+Enter the number of elements to be pushed into the stack:
+4
+Enter element 1:
+10
+Enter element 2:
+8
+Enter element 3:
+25
+Enter element 4:
+3
+ 
+Sample output statement 2:
+The middle element is: 8
+The popped element is: 3
+
+
+Sample input statement 3:
+Enter the number of elements to be pushed into the stack:
+-7
+
+Sample output statement 3:
+Invalid input
+
+Explanation: 
+
+1.Constants and Class Declaration:
+the code defines a constant MAX with a value of 50. It then declares a class named Stack, which will be used to implement a stack data structure. The class has two private member variables (top and mid) and a public integer array stk to store stack elements. The constructor initializes top and mid to -1.
+
+2.Stack Operations:
+The class declares three member functions: push, findMiddle, and pop, which represent the basic operations of a stack - push an element onto the stack, find the middle element, and pop (remove) an element from the stack.
+
+3.Push Operation:
+The push function adds an element to the stack. It checks if the stack is full (top >= MAX - 1) and displays an overflow message if true. It then increments top, assigns the new element to stk[top], and updates the mid index to point to the middle element.
+
+4.Pop Operation:
+The pop function removes the top element from the stack. It checks for stack underflow (empty stack) and displays a message if it occurs. It then retrieves the top element, decrements top, and updates the mid index if the stack size becomes odd.
+
+5.Find Middle Operation:
+The findMiddle function returns the middle element of the stack. It checks if the stack is empty and displays a message if true. Otherwise, it returns the value stored at the mid index.
+
+6.Main Function:
+the user is prompted to input the number of elements to push onto the stack. Then, a loop takes user input for each element and pushes it onto the stack. Finally, it prints the middle element using findMiddle and pops an element using pop.
