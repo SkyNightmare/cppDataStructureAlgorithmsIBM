@@ -1,0 +1,82 @@
+#include<iostream>
+using namespace std;
+#define MAX 50
+
+class Stack {
+    int top;
+    int mid;
+public:
+    int stk[MAX];
+    Stack() {
+        top = -1;
+        mid = -1;
+    }
+    void push(int data);
+    int findMiddle();
+    int pop();
+};
+
+void Stack::push(int data) {
+    if (top >= MAX - 1) {
+        cout << "Stack Overflow" << endl;
+        return;
+    }
+
+    stk[++top] = data;
+
+    if (mid == -1) {
+        mid = top;
+    } else {
+        if (top % 2 == 0) {
+            mid = (mid + 1);
+        }
+    }
+}
+
+int Stack::pop() {
+    if (top < 0) {
+        cout << "Stack Underflow" << endl;
+        return -1;
+    }
+
+    int poppedElement = stk[top--];
+
+    
+    if (top % 2 == 1) {
+        mid = (mid - 1);
+    }
+
+    return poppedElement;
+}
+
+int Stack::findMiddle() {
+    if (mid == -1) {
+        cout << "Stack is empty" << endl;
+        return -1;
+    }
+    return stk[mid];
+}
+
+int main() {
+    int no;
+    Stack st;
+    cout << "\nEnter the number of elements to be pushed into the stack:";
+    cin >> no;
+
+    if (no <= 0) {
+        cout << "Invalid input" << endl;
+        return 0;
+    }
+
+    int element;
+    for (int i = 0; i < no; i++) {
+        cout << "Enter element " << i + 1 << ": ";
+        cin >> element;
+        st.push(element);
+    }
+
+    cout << "The middle element is: " << st.findMiddle() << endl;
+    cout << "The popped element is: " << st.pop() << endl;
+
+    return 0;
+}
