@@ -1,0 +1,95 @@
+//DO NOT CHANGE THE GIVEN CODE TEMPLATE. WRITE YOUR CODE IN THE PROVIDED PLACES ALONE.
+
+#include <iostream>
+using namespace std;
+
+class Queue {
+public:
+    int front, rear;
+    int personQueue[5];
+    Queue() {
+        front = rear = -1;
+    }
+    void enQueue(int codeNumber);
+    void deQueue();
+    void display();
+};
+
+void Queue::enQueue(int codeNumber) {
+    if ((rear + 1) % 5 == front) {
+        cout << "\nCurrently, the queue is full\n";
+    } else {
+        if (front == -1) {
+            front = rear = 0;
+        } else {
+            rear = (rear + 1) % 5;
+        }
+        personQueue[rear] = codeNumber;
+        cout << "\nPerson with code number " << codeNumber << " added to the queue\n";
+    }
+}
+
+void Queue::deQueue() {
+    if (front == -1) {
+        cout << "\nThe queue is empty\n";
+    } else {
+        cout << "\nThe person removed from the queue: " << personQueue[front] << "\n";
+        if (front == rear) {
+            front = rear = -1;
+        } else {
+            front = (front + 1) % 5;
+        }
+    }
+}
+
+void Queue::display() {
+    if (front == -1) {
+        cout << "\nThe queue is empty\n";
+    } else {
+        cout << "\nThe persons in the queue: ";
+        int i = front;
+        while (i != rear) {
+            cout << personQueue[i] << " ";
+            i = (i + 1) % 5;
+        }
+        cout << personQueue[rear] << "\n";
+    }
+}
+
+int main() {
+    Queue q;
+    int codeNumber;
+    int choice;
+    do {
+        cout << "\n1. Add a person to the Queue";
+        cout << "\n2. Remove a person from the Queue";
+        cout << "\n3. Display all the code numbers";
+        cout << "\n4. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                cout << "\nEnter the code no. of the person: ";
+                cin >> codeNumber;
+                q.enQueue(codeNumber);
+                break;
+
+            case 2:
+                q.deQueue();
+                break;
+
+            case 3:
+                q.display();
+                break;
+
+            case 4:
+                return 0;
+
+            default:
+                cout << "Invalid option\n";
+        }
+
+    } while (true);
+
+    return 0;
+}
