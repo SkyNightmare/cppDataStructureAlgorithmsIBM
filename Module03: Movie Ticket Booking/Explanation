@@ -1,0 +1,169 @@
+Consider a queue for booking movie tickets. The first person standing in the Queue would get the first ticket and the last person in the Queue would get the ticket accordingly. Assume that the size of the Queue is 5.
+
+Perform the following operations on this Queue:
+1. Add a person to the Queue
+2. Remove a person from the Queue
+3. Display the code numbers of the people standing in the Queue
+
+
+If the Queue is full, display the message "Currently, the queue is full".
+If the Queue is empty, display the message "The queue is empty".
+Use the Queue data structure for implementing this scenario. Write a Menu Driven Program using C++.
+
+
+Note:
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+
+
+Sample input and output statement:
+
+1. Add a person to the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:1
+Enter code no. of the person: 101
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:1
+Enter code no. of the person: 102
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:1
+Enter code no. of the person: 103
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:1
+Enter code no. of the person: 104
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+Enter your choice:1
+Enter code no. of the person: 105
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:1
+Enter code no. of the person: 106
+
+Currently, the queue is full
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:2
+The person removed from the Queue: 101
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:3
+The persons in the queue: 102 103 104 105
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+Enter your choice:2
+
+The person removed from the queue: 102
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:2
+The person removed from the queue:103
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:2
+The person removed from the queue:104
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:2
+The person removed from the queue:105
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:2
+The queue is empty
+
+1. Add a person in the Queue
+2. Remove a person from the Queue
+3. Display all the code numbers
+4. Exit
+
+Enter your choice:4
+
+
+Explanation:
+
+1.Class Definition (Queue):
+
+The Queue class is created to represent a queue of people with code numbers.
+It has three member variables: front and rear to keep track of the front and rear indices of the queue, and personQueue, an array to store the code numbers of people.
+
+2.enQueue Method:
+
+This method is responsible for adding a person to the queue.
+It checks if the queue is full before adding.
+If the queue is not full, it adds the person's code number to the rear of the queue.
+
+3.deQueue Method:
+
+This method removes a person from the front of the queue.
+It checks if the queue is empty before removing.
+If the queue is not empty, it removes the person and updates the front index.
+
+4.display Method:
+
+This method displays all the code numbers in the queue.
+It checks if the queue is empty before displaying.
+If the queue is not empty, it prints the code numbers from the front to the rear.
+
+5.main Function:
+
+In the main function, an instance of the Queue class (q) is created.
+It enters a loop that presents a menu to the user with four options:
+Option 1: Add a person to the queue by entering a code number.
+Option 2: Remove a person from the front of the queue.
+Option 3: Display all the code numbers in the queue.
+Option 4: Exit the program.
+Based on the user's choice, the program calls the corresponding method of the Queue class or exits the loop.
+The loop continues until the user chooses to exit the program.
