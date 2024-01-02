@@ -1,0 +1,190 @@
+Consider a scenario where Tom has stacked books in a book box.   Initially, Tom wanted to take a book from the book stack. Since it was the last book of that book stack, he took it easily. After some time, he wanted to take the third book from the box. For that, he removed all the books kept above the third book and then took the third book.
+
+Assume that the size of the box is 5.
+Perform the following operations on this box.
+
+1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+
+If the box is full, display the message as "The box is full".
+If the box is empty, display the message as "The box is empty"
+
+Use Stack data structure for implementing this scenario.  Write a Menu Driven Program using C++.
+
+Note:
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+
+ 
+ Sample input and output statements:
+ 
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:1
+Enter the book No.:bk101
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:1
+Enter the book no.:bk102
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:1
+Enter the book no.:bk103
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:1
+Enter the book no.:bk104
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:1
+Enter the book no.:bk105
+
+1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:1
+The box is full
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:3
+The books in the box: bk105  bk104  bk103  bk102  bk101
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:2
+The book is deleted from the box: bk105
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:2
+The book is deleted from the box: bk104
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:2
+The book is deleted from the box: bk103
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:2
+The book is deleted from the box: bk102
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:2
+The book is deleted from the box: bk101
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:2
+The box is empty
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:7
+Invalid option
+
+ 1. Insert a book in the box
+ 2. Delete a book from the box
+ 3. Display book box
+ 4. Exit
+
+Enter your choice:4
+
+Explanation:
+
+The program defines a class called Stack to represent a stack of books in a box.
+
+The Stack class has the following private member:
+
+top: Represents the top index of the stack.
+The Stack class has three public methods:
+
+push(char bkNo[]): Adds a book with the given book number (bkNo) to the top of the stack (box).
+pop(): Removes the book from the top of the stack (box) and displays its book number.
+display(): Displays the book numbers in the stack (box) from top to bottom.
+The main function:
+
+Creates an instance of the Stack class named stk.
+Uses a do-while loop to repeatedly display a menu of options to the user and execute the chosen operation.
+Menu options in the loop:
+
+Insert a book in the box (choice 1): Takes a book number from the user and adds it to the stack using the push method.
+Delete a book from the box (choice 2): Removes the top book from the stack using the pop method.
+Display book box (choice 3): Displays the book numbers in the stack using the display method.
+Exit (choice 4): Ends the program.
+
+*
+push(char bkNo[]) method:
+Purpose: Adds a book with the given book number to the top of the stack (box).
+How it works:
+Checks if the stack is full (top is at the maximum index, in this case, 4).
+If the stack is full, it prints a message indicating that the box is full.
+If the stack is not full, it increments the top index and copies the provided book number (bkNo) into the corresponding row of the box array.
+*
+
+*
+pop() method:
+Purpose: Removes the book from the top of the stack (box) and displays its book number.
+How it works:
+Checks if the stack is empty (top is -1).
+If the stack is empty, it prints a message indicating that the box is empty.
+If the stack is not empty, it displays the book number at the top of the stack and decrements the top index.
+*
+
+*
+display() method:
+Purpose: Displays the book numbers in the stack (box) from top to bottom.
+How it works:
+Checks if the stack is empty (top is -1).
+If the stack is empty, it prints a message indicating that the box is empty.
+If the stack is not empty, it iterates through the stack from the top to the bottom and prints each book number.
+*
