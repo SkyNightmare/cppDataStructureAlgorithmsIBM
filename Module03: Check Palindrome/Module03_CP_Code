@@ -1,0 +1,88 @@
+#include<iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+};
+
+class Stack {
+public:
+    Node* top;
+    Stack() {
+        top = NULL;
+    }
+
+    void push(int data);
+    int pop();
+};
+
+void Stack::push(int data) {
+    // Creating a new node
+    Node* newNode = new Node;
+    newNode->data = data;
+    newNode->next = top;
+    top = newNode;
+}
+
+int Stack::pop() {
+    if (top == NULL) {
+        cout << "Stack underflow" << endl;
+        return 0;
+    }
+
+    int poppedData = top->data;
+    Node* temp = top;
+    top = top->next;
+    delete temp;
+
+    return poppedData;
+}
+
+int checkPalindrome(Stack stk, int arr[], int size) {
+    // Write your code here
+    int isPalindrome = 1;
+
+    for (int i = 0; i < size; i++) {
+        int poppedElement = stk.pop();
+
+        // Displaying popped element
+        cout << "Popped element:" << poppedElement << endl;
+
+        // Checking if the popped element matches the corresponding array element
+        if (poppedElement != arr[i]) {
+            isPalindrome = 0;
+            break;
+        }
+    }
+
+    return isPalindrome;
+}
+
+int main() {
+    Stack stk;
+    int size, i, data;
+
+    cin >> size;
+
+    if (size < 2) {
+        cout << "Invalid input";
+        return 0;
+    }
+
+    int arr[size];
+    for (i = 0; i < size; i++) {
+        cin >> data;
+        arr[i] = data;
+        stk.push(data);
+    }
+
+    // Calling the 'checkPalindrome()' method
+    int result = checkPalindrome(stk, arr, size);
+
+    // Displaying the final result
+    cout << result << endl;
+
+    return 0;
+}
