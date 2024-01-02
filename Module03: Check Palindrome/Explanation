@@ -1,0 +1,148 @@
+The program should display 1 if the list is a palindrome else it should display 0.  Help Alice to win the competition.
+
+The classes required for implementing the scenario:
+
+class Node {     
+
+      public:
+
+         int data;
+
+         Node *next;
+
+};
+
+
+
+class Stack{ 
+
+   public:
+
+       Node *top;
+
+       Stack(){ 
+
+           top=NULL;
+
+        }
+
+        void push(int data);
+
+        int pop();
+
+};
+
+Methods:
+
+void Stack :: push(int data) -  This 'Stack' class method is for inserting an element in to the stack and takes â€˜dataâ€™ as its parameter.
+
+int Stack ::pop() -  This 'Stack' class method is to delete an element from the stack.  It should return the element to be deleted from the stack.  If there is no element to be deleted then display the message â€œStack underflowâ€ and should return â€˜0â€™ from the function.
+
+int checkPalindrome(Stack stk, int arr[],int size) : It is an external function which is used to check whether the given list is a palindrome or not.  This function takes â€˜Stackâ€™ class object, an array of elements and the size of the array as its parameters and returns an integer value.  If the array of elements is palindrome, it should return 1 else should return 0.   This function should also display each popped element from the stack  while performing the palindrome check.
+
+
+Note:
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+
+
+Input format:
+The first line of input contains an integer N denoting the size of the linked list. In the next line are N space separated values of the nodes of the linked list.
+
+Output format:
+For each test case, the output will be  the popped element(s) from the stack and display 1 if the list is a palindrome else 0.
+
+
+Sample input statement 1:
+4
+2 3  3 2
+
+Sample output statement 1:
+
+Popped element:2
+
+Popped element:3
+
+Popped element:3
+
+Popped element:2
+
+1
+
+
+
+Sample input statement 2:
+
+9
+3 4 2 5 6 2 7 1 9
+
+Sample output statement 2:
+
+Popped element:9
+
+0
+
+ 
+
+Sample input statement 3:
+3
+1 6 1
+
+Sample output statement 3:
+
+Popped element:1
+
+Popped element:3
+
+Popped element:1
+
+1
+
+
+
+Sample input statement 4:
+
+6
+
+
+1 2 4 3 2 1
+
+Sample output statement 4:
+
+Popped element:1
+
+Popped element:2
+
+Popped element:3
+
+0
+
+Explanation:
+
+1. Node Class:
+   - Represents an element in the linked list with a value (`data`) and a pointer to the next node (`next`).
+
+2. Stack Class:
+   - Represents a stack data structure using a linked list.
+   - Provides methods for pushing (adding) and popping (removing) elements from the stack.
+
+3. push Method (in Stack Class):
+   - Adds a new element to the top of the stack by creating a new node and updating the top pointer.
+
+4. pop Method (in Stack Class):
+   - Removes the top element from the stack, returns its value, and updates the top pointer.
+   - If the stack is empty, it displays "Stack underflow."
+
+5. checkPalindrome Function:
+   - Takes a stack, an array, and the size of the array as parameters.
+   - Pops elements from the stack and compares them with the corresponding elements in the array.
+   - If any element doesn't match, sets a flag (`isPalindrome`) to indicate it's not a palindrome.
+   - Displays each popped element during the process.
+
+6. main Function:
+   - Takes input for the size of the linked list (`size`) and values of nodes (`arr`).
+   - Checks if the size is less than 2 (as a palindrome should have at least two elements).
+   - Uses the `push` method to build a stack from the input array.
+   - Calls `checkPalindrome` to check if the linked list is a palindrome.
+   - Prints the result (1 for palindrome, 0 for not a palindrome) and the popped elements.
