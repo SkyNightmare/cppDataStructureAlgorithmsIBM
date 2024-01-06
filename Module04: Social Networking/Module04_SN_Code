@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    // Write your code here
+    int numNode, numEdge, row, column;
+    cout << "Enter the no. of users: ";
+    cin >> numNode;
+    cout << "Enter the no. of connections: ";
+    cin >> numEdge;
+    int** graphMatrix = new int*[numNode]{};
+    for (int i=0; i<numNode; i++){
+        graphMatrix[i] = new int[numNode]{};
+    }
+
+    for (int i=0; i<numEdge; i++){
+        cout << "Enter the start node and end node in connection " << i+1 << ":" << endl;
+        cin >> row;
+        cin >> column;
+        graphMatrix[row-1][column-1] = column;
+        graphMatrix[column-1][row-1] = row;
+    }
+
+    cout << "The representation of SocialNet users:" << endl;
+    for (int i=0; i<numNode; i++){
+        for (int j=0; j<numNode; j++){
+            cout << graphMatrix[i][j] << " ";
+        }
+        cout << "\n";
+    }
+
+    cout << "The friends' list of all users:" << endl;
+    for (int i=0; i<numNode; i++){
+        cout << i+1 << "->";
+        bool mutex = true;
+        for (int j=0; j<numNode; j++){
+            if (graphMatrix[i][j] != 0){
+                cout << graphMatrix[i][j] << " ";
+                mutex = false;  
+            }
+        }
+        if (mutex){
+            cout << 0 << " ";
+        }
+        cout << "\n";
+    }
+
+    for (int i=0; i<numNode; i++){
+        delete[] graphMatrix[i];
+    }
+    delete[] graphMatrix;
+
+    return 0; 
+}
