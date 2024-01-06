@@ -1,0 +1,52 @@
+//DO NOT CHANGE THE GIVEN CODE TEMPLATE. WRITE YOUR CODE IN THE PROVIDED PLACES ALONE.
+//If required, you can add additional functions or header files.
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    //Write your code here
+    int numNodes, numEdges, node1, node2, dist;
+    std::cout << "Enter the no. of cities:";
+    std::cin >> numNodes;
+    std::cout << "Enter the no. of connecting (one-way) roads:";
+    std::cin >> numEdges;
+    int graph[numNodes][numNodes]{};
+    for (int i=0; i<numEdges; i++){
+        std::cout << "Enter the start node (city) and end node (city) in the connection " << i+1 << ":";
+        std::cin >> node1;
+        std::cin >> node2;
+        std::cout << "Enter the distance (weight): ";
+        std::cin >> dist;
+        graph[node1][node2] = dist;
+    }
+    std::cout << "The distance between the connecting cities are:" << std::endl;
+    bool mutex;
+    int cont, highCity = -1, maxRoads = 0;
+    for (int i=0; i<numNodes; i++){
+        mutex = 1;
+        cont = 0;
+        for (int j=0; j<numNodes; j++){
+            if (graph[i][j] != 0){
+                std::cout << i << " -> " << j << " Distance: " << graph[i][j] << std::endl;
+                mutex = 0;
+                cont++;
+            }
+        }
+        if (mutex){
+                std::cout << i << " - No connecting roads found " << std::endl;
+        }
+        if (cont > maxRoads){
+            maxRoads = cont;
+            highCity = i;
+        }
+    }
+
+    if (highCity == -1){
+        std::cout << "\nNo city has any connecting road." << std::endl;
+    } else {
+        std::cout << "\n" << highCity << " is the city with the highest connecting roads." << std::endl;
+    }
+
+    return 0;
+}
