@@ -1,0 +1,102 @@
+In a country, there are N cities (vertices) that are connected by M one-directional roads (edges).  A city can be connected to more than one city but if you travel from one city to another by the one-directional road, you cannot go back.  Implement this scenario using the  graph data structure and display all the cities along with its directly connected cities and the distance.   Also, identify the city that is directly connected to the highest number of cities.  
+
+Note:
+
+If there is no city with connecting roads, then display the message: "No city has any connecting roads".
+If there is more than one city with the highest no. of connecting roads, then display the name of the first city only.
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+
+
+Sample input statement 1:
+
+Enter the no. of cities:3
+Enter the no. of connecting (one-way) roads:3
+
+Enter the start node (city) and end node (city) in the connection 1:0 1
+Enter the distance (weight):89
+Enter the start node (city) and end node (city) in the connection 2:1 2
+Enter the distance (weight):56
+Enter the start node (city) and end node (city) in the connection 3:2 0
+Enter the distance (weight):45
+
+Sample output statement 1:
+
+The distance between the connecting cities are:
+0 -> 1 Distance: 89
+1 -> 2 Distance: 56
+2 -> 0 Distance: 45
+0 is the city with the highest connecting roads.
+
+
+Sample input statement 2:
+
+Enter the no. of cities:3
+Enter the no. of connecting (one-way) roads:0
+
+Sample output statement 2:
+
+The distance between the connecting cities are:
+0 - No connecting roads found
+1 - No connecting roads found
+2 - No connecting roads found
+
+No city has any connecting road.
+
+
+Sample input statement 3:
+Enter the no. of cities:4
+Enter the no. of connecting (one-way) roads:4
+
+Enter the start node (city) and end node (city) in the connection 1:0 1
+Enter the distance (weight):40
+Enter the start node (city) and end node (city) in the connection 2:0 2
+Enter the distance (weight):50
+Enter the start node (city) and end node (city) in the connection 3:1 3
+Enter the distance (weight):60
+Enter the start node (city) and end node (city) in the connection 4:1 2
+Enter the distance (weight):50
+
+Sample output statement 3:
+
+The distance between the connecting cities are:
+0 -> 1 Distance: 40
+0 -> 2 Distance: 50
+1 -> 2 Distance: 50
+1 -> 3 Distance: 60
+2 - No connecting roads found
+3 - No connecting roads found
+
+0 is the city with the highest connecting roads.
+
+Explanation:
+
+1.Input Gathering:
+
+The program begins by asking the user to input the number of cities (numNodes) and the number of one-way connecting roads (numEdges).
+
+2.Graph Initialization:
+
+It then initializes a 2D array (graph) to represent the connectivity between cities. The array is filled with zeros initially.
+
+3.Connection Input:
+
+The user is prompted to input details about each connecting road.
+For each road, the user provides the starting city (node1), the ending city (node2), and the distance (weight) between them (dist).
+The program updates the graph array with the distance value for the corresponding connecting road.
+
+4.Displaying Connecting Distances:
+
+The program prints the distances between connecting cities.
+For each city, it goes through the array and prints the cities that it is connected to and the distance between them.
+
+5.Finding City with the Most Connecting Roads:
+
+The program identifies the city with the highest number of connecting roads.
+It keeps track of the city with the maximum number of connecting roads (highCity) and the count of connecting roads for each city.
+
+6.Displaying Results:
+
+If no city has connecting roads, it informs the user.
+Otherwise, it prints the city with the highest number of connecting roads.
