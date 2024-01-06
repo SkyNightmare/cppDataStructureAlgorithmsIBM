@@ -1,0 +1,129 @@
+Each user in SocialNet is given a unique number, the first user being numbered 1. There are N users in SocialNet numbered from 1 to N. In SocialNet, there is a two-way link as in Facebook. James wants to print the friend list of each user. If any user does not have friends, then print 0.   Also he wants to display the  representation  SocialNet users using adjacency matrix.   Help James to do this.
+
+
+Note:
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+Input:
+The first line of input takes the number of users, N. The second line takes the number of connections in SocialNet. The remaining lines are the connection from one user to another. 
+
+
+Output:
+Print the friends' list of all the users along with the adjacency matrix (graph) representation of all the users.
+
+
+Sample input statement 1:
+
+Enter the no. of users: 3
+
+Enter the no. of connections: 2
+Enter the start node and end node in connection 1:
+1 2
+Enter the start node and end node in connection 2:
+2 3
+
+Sample output statement 1:
+
+The representation of SocialNet users:
+
+0 2 0 
+
+1 0 3 
+
+0 2 0 
+
+The friends' list of all users:
+
+1->2
+2->1 3
+3->2
+
+
+
+Sample input statement 2:
+Enter the no. of users: 5
+
+Enter the no. of connections: 3
+Enter the start node and end node in connection 1:
+1 2
+Enter the start node and end node in connection 2:
+1 4
+Enter the start node and end node in connection 3:
+4 5
+
+Sample output statement 2:
+
+The representation of SocialNet users:
+
+0 2 0 4 0 
+
+1 0 0 0 0 
+
+0 0 0 0 0 
+
+1 0 0 0 5 
+
+0 0 0 4 0 
+
+The friends' list of all users:
+
+1->2 4
+2->1
+3->0
+4->1 5
+5->4
+
+
+
+Sample input statement 3:
+Enter the no. of users:5
+
+Enter the no. of connections:0
+
+Sample output statement 3:
+
+The representation of SocialNet users:
+
+0 0 0 0 0 
+
+0 0 0 0 0 
+
+0 0 0 0 0 
+
+0 0 0 0 0 
+
+0 0 0 0 0 
+
+The friends' list of all users:
+1->0
+2->0
+3->0
+4->0
+5->0
+
+
+Explanation:
+
+1.Setting Up the Network:
+
+We create a grid or matrix to keep track of who is connected to whom.
+Each cell in the matrix represents a connection between two people.
+Initially, all cells are set to 0, indicating no direct connections.
+
+2.Recording Connections:
+
+We ask the user to input the connections between people.
+For example, if the user says "1 2", it means person 1 is connected to person 2, and vice versa.
+We update the matrix to reflect these connections.
+
+3.Displaying the Social Network:
+
+We print out the matrix to show how people are connected.
+Each row and column represent a person, and the numbers in the cells show who they are connected to.
+
+4.Listing Friends:
+
+For each person, we go through the matrix to find their connections.
+We print a list of friends for each person in a specific format.
+If a person has no friends, we print a "0".
