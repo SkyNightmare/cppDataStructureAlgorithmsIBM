@@ -1,0 +1,81 @@
+Find the number of connected objects in a given 2-D binary matrix. If there is a path between two nodes the value of that position will be 1 else it will be 0.
+
+The above diagram depicts 3 connected objects in a 3 X 5 matrix.
+
+If the no. of rows or columns entered is less than 1, then display the message â€˜Invalid inputâ€™ and stop the program execution.
+
+
+Note:
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+
+Sample input statement 1:
+Enter the number of rows:
+5
+Enter the number of columns:
+5
+Enter the matrix:
+0 0 0 0 0
+0 1 0 1 0
+1 0 0 0 1
+0 1 0 1 0
+0 0 0 0 0
+
+
+Sample output statement 1:
+Number of connected objects = 2
+
+
+
+Sample input statement 2:
+Enter the number of rows: 
+3
+Enter the number of columns: 
+4 
+Enter the matrix: 
+1 1 0 0
+0 0 0 1
+1 1 0 1
+
+
+Sample output statement 2:
+Number of connected objects = 3
+
+
+Sample input statement 3:
+Enter the number of rows: 
+0
+Enter the number of columns: 
+4 
+
+
+Sample output statement 3:
+Invalid input
+
+Explanation: 
+
+1.dfs Function:
+The dfs function performs depth-first search starting from a given cell (i, j).
+It recursively explores all eight possible directions (including diagonals) from the current cell.
+The search stops if the cell is out of bounds, has a value of '0', or has already been visited.
+If the conditions are met, the cell is marked as visited (visited[i][j] = true), and the function is called recursively on adjacent cells.
+
+2.Main Function:
+The program starts by prompting the user to enter the number of rows and columns for the matrix.
+It checks for invalid input (non-positive values) and exits if the input is invalid.
+Dynamically allocates memory for the binary matrix (matrix) and a boolean matrix (visited) to keep track of visited cells.
+User inputs the binary matrix values, and the corresponding visited matrix is initialized to false.
+The program then iterates through each cell in the matrix. If a cell has a value of '1' and has not been visited, it initiates a DFS from that cell, marking all connected cells as visited and increments the connectedObjects count.
+Then, it outputs the total number of connected objects.
+
+3.Memory Management:
+The program dynamically allocates memory for the matrices using the new keyword.
+After processing, it frees the allocated memory using the delete keyword to avoid memory leaks.
+
+4.Algorithm Overview:
+The program uses DFS to traverse through the matrix, marking connected cells as visited and counting the number of connected objects.
+It follows a straightforward approach to iterate through each cell and initiates DFS only if the cell contains '1' and has not been visited.
+
+5.Output:
+The program outputs the total number of connected objects found in the binary matrix.
