@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main() { 
+    // Input
+    string st;
+    cout << "Enter the String: ";
+    cin >> st;
+
+    // Separate lowercase and uppercase letters
+    string lowercase, uppercase;
+
+    // Iterate through each character in the string
+    for (size_t i = 0; i < st.length(); ++i) {
+        // Check if the character is lowercase
+        if (islower(st[i])) {
+            lowercase += st[i];
+        }
+        // Check if the character is uppercase
+        else if (isupper(st[i])) {
+            uppercase += st[i];
+        }
+    }
+
+    // Sort lowercase letters alphabetically
+    sort(lowercase.begin(), lowercase.end());
+
+    // Sort uppercase letters alphabetically in reverse order
+    sort(uppercase.rbegin(), uppercase.rend());
+
+    // Combine the sorted lowercase and uppercase letters
+    string result = uppercase + lowercase;
+
+    // Output the sorted string
+    cout << "The sorted string is: " << result << endl;
+
+    return 0;
+}
