@@ -1,0 +1,49 @@
+David likes to play with strings and he always tries to do something new with them. This time, he wants to sort the string in a unique way.  He wants to sort the string composed of both lowercase and uppercase letters without space. He also wants to sort it such that the uppercase and lowercase letters are sorted separately in alphabetical order. Additionally, the uppercase letters should be in the reverse order.  He needs your help to complete this task as fast as possible.
+
+Example:
+Input: bAwutknWEd
+Output: WEAbdkntuw
+
+Explanation:
+Here we see that the uppercase letters 'W', 'E', 'A' are sorted alphabetically as well as in the reverse order, and the lowercase letters 'b', 'd', 'k', 'n', 't', 'u', 'w' are only sorted alphabetically.
+
+Note:
+
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+
+Input:
+ The first line of input contains the string to be sorted.
+Output:
+ Print the string in the required sorted format.
+
+
+Sample input statement 1:
+Enter the string: SortingAlgorithM
+
+Sample output statement 1:
+The sorted string is: SMAgghiilnoorrtt
+
+Explanation:
+
+1. Input:
+This part declares a string variable st to store the input string.
+It prompts the user to enter a string and reads the input using cin.
+
+2.Separate lowercase and uppercase letters:
+Two empty strings lowercase and uppercase are declared to store lowercase and uppercase letters separately.
+A for loop iterates through each character in the input string st.
+Inside the loop:
+If the current character is lowercase (islower(st[i])), it is appended to the lowercase string.
+If the current character is uppercase (isupper(st[i])), it is appended to the uppercase string.
+
+3.Sort lowercase and uppercase letters:
+The sort function from the <algorithm> header is used to sort the lowercase string alphabetically.
+The sort function is also used to sort the uppercase string in reverse order (rbegin() and rend() are used to achieve reverse sorting).
+
+4.Combine the sorted lowercase and uppercase letters:
+The sorted uppercase and lowercase strings are concatenated to form the final sorted string, stored in the result variable.
+
+5.Output the sorted string:
+Finally, the program outputs the sorted string with a descriptive message.
