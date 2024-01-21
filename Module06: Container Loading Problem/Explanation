@@ -1,0 +1,62 @@
+Assume, there are N containers that need to be loaded into the ship. The capacity of the ship is W tons.  If weights of the N containers are given, find out the maximum number of containers that can be loaded into the ship.  Write a program in C++ to solve the problem.
+
+Note:
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+
+Input format:
+The first line of the input consists of an integer that corresponds to n.
+The next n lines of the inputs consist of integers that correspond to the weights of the n containers [w1, w2,... wn].
+The last line of the input consists of an integer that corresponds to W.
+
+Output format:
+The first line of the output consists of a single integer that corresponds to the maximum number of containers that can be loaded into the ship.
+The next line of the output corresponds to the solution vector.
+
+
+Sample input statement 1:
+8
+50
+100
+30
+80
+90
+200
+150
+20
+400
+
+Sample output statement 1:
+6
+[1,1,1,1,1,0,0,1]
+
+
+Sample input statement 2:
+3
+40
+50
+5
+45
+
+Sample output statement 2:
+2
+[1,0,1]
+
+Explanation:
+
+1.Input Section:
+The program starts by reading an integer n, representing the number of containers.
+A vector weights is declared to store the weights of the containers. The size of the vector is set to n.
+A loop is used to read the weights of the n containers and store them in the weights vector.
+The program then reads an integer W, representing the capacity of the ship.
+Another vector solution is declared to store the solution (whether a container is loaded or not). It is initialized with zeros.
+
+2.Main Logic Section:
+Two variables loadedWeight and loadedContainers are initialized to zero. These will be used to track the total weight loaded and the number of loaded containers.
+A loop iterates through each container, and if adding the weight of the current container does not exceed the ship's capacity (loadedWeight + weights[i] <= W), the container is considered loaded.
+The solution vector is updated accordingly, and loadedWeight and loadedContainers are incremented.
+
+3.Output Section:
+The program outputs the total number of loaded containers (loadedContainers).
+It then prints the solution vector in the specified format, enclosing the elements in square brackets and separating them by commas.
