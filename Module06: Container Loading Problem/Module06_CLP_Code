@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    // Number of containers
+    int n;
+    cin >> n;
+
+    // Vector to store weights of containers
+    vector<int> weights(n);
+
+    // Input weights of containers
+    for (int i = 0; i < n; ++i) {
+        cin >> weights[i];
+    }
+
+    // Capacity of the ship
+    int W;
+    cin >> W;
+
+    // Vector to store the solution
+    vector<int> solution(n, 0);
+
+
+    int loadedWeight = 0;
+    int loadedContainers = 0;
+
+    for (int i = 0; i < n; ++i) {
+        if (loadedWeight + weights[i] <= W) {
+            solution[i] = 1;
+            loadedWeight += weights[i];
+            loadedContainers++;
+        }
+    }
+
+    // Output the result
+    cout << loadedContainers << endl;
+    
+    cout << "[";
+    for (int i = 0; i < n; ++i) {
+        cout << solution[i];
+        if (i < n - 1) {
+            cout << ",";
+        }
+    }
+    cout << "]" << endl;
+
+    return 0;
+}
