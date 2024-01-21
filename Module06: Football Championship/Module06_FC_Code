@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+
+int binarySearch(int arr[], int size, int key) {
+    int low = 0;
+    int high = size - 1;
+    
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        
+        // Display mid scores label only once
+        if (low == 0 && high == size - 1) {
+            cout << "Mid scores: ";
+        }
+        
+        // Display mid score in the same line
+        cout << arr[mid] << " ";
+        
+        if (arr[mid] == key) {
+            return mid + 1; // Score found, return team number
+        } else if (arr[mid] < key) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+    
+    return -1; // Score not found
+}
+
+int main() {
+    cout << "Enter the number of teams:";
+    int no, score, result;
+    cin >> no;
+    int teams[no];
+    
+    cout << "Enter the score:\n";
+    for (int idx = 0; idx < no; idx++) {
+        cin >> teams[idx];
+    }
+    
+    cout << "Enter the score to be searched:";
+    cin >> score;
+    
+    result = binarySearch(teams, no, score);
+    
+    if (result != -1) {
+        cout << "\nScore found for team " << result << endl;
+    } else {
+        cout << "\nScore not found in any team" << endl;
+    }
+
+    return 0;
+}
