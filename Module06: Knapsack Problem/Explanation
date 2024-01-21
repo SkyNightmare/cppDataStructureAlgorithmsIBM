@@ -1,0 +1,58 @@
+Implement the 0-1 knapsack problem using the dynamic programming design strategy.  Given are N items with some weights and corresponding values and a knapsack of capacity W. The items should be placed in the knapsack in such a way that the total value should be maximum, and the total weight should be less than or equal to the knapsack capacity.
+
+In this problem, 0-1 means that we canâ€™t put the items in a fraction. Either put the whole item or ignore it.
+
+Note:
+If the number of items is <=0, then display the message "Invalid input" and terminate the program.
+Observe the highlighted output statements in the sample input and output statements for more clarifications.
+Do not change the code template given.  Write your code in the provided places alone.
+Avoid the usage of exit(0) in your code.  
+
+Sample input statement 1:
+Enter the number of items: 4
+Enter the weight and the value of the items:
+100 20
+50 10
+70 30
+40 80
+
+Enter the size of knapsack:60
+
+Sample output statement 1:
+The total value is:80
+
+
+[Explanation: The knapsack capacity is 60. So, we need to choose the items with the weight â‰¤60 with the highest value Here there are two items with weight â‰¤60 : 
+1. Item with the weight 50 with the value 10 and 
+ 2. Item with the weight 40 with the value 80. 
+Since the second item has the highest value, we have to choose that item and should display its value.]
+
+Sample input statement 2:
+Enter the number of items: -4
+
+Sample output statement 2:
+Invalid input
+
+
+Sample input statement 3:
+Enter the number of items: 0
+
+Sample output statement 3:
+Invalid input
+
+Explanation:
+
+1.Input: Number of Items
+This section prompts the user to input the number of items (n). It checks if n is less than or equal to zero. If true, it prints "Invalid input" and terminates the program, ensuring a valid number of items.
+
+2.Input: Weight and Value of Items
+This part creates two vectors, weight and value, to store the weight and value of each item. It then prompts the user to input the weight and value for each item in a loop.
+
+3.Input: Size of Knapsack
+This section prompts the user to input the size of the knapsack (W). It also initializes a vector dp of size W + 1 to store the maximum total value that can be obtained for each possible knapsack capacity.
+
+4.Dynamic Programming: Filling the Table
+This is the core of the dynamic programming algorithm for the 0-1 knapsack problem. It uses two nested loops to fill the dynamic programming table (dp). The outer loop iterates through each item, and the inner loop iterates through each possible knapsack capacity in reverse order.
+
+5.Output: Maximum Total Value
+the program prints the maximum total value that can be obtained for the given knapsack capacity (W). The result is stored in dp[W], representing the optimal value for the entire knapsack problem. The program then returns 0, indicating successful execution.
