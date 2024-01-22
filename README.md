@@ -3,3 +3,5 @@ This is a compilation of my programs of EDX course C++ Data Structure And Algori
 
 It will be divided in Labs. 
 I will explain my codes for better understanding
+
+UPDATE: Full completed 100% each Module.
